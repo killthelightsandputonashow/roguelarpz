@@ -1,0 +1,19 @@
+{
+  "name": "Heapheart: First Intention",
+  "short_name": "Heapheart",
+  "description": "An offline pocket roguelike about restoring the First Intentions trapped inside a privatized miracle engine.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#110f18",
+  "theme_color": "#17131f",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
