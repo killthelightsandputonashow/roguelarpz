@@ -1,14 +1,23 @@
 # HEAPHEART: FIRST INTENTION
 
-A phone-first offline roguelike about restoring the First Intentions trapped inside a privatized miracle engine.
+A phone-first offline tactical roguelike novella about restoring the First Intentions trapped inside a privatized miracle engine.
 
 ## Play
 
-After GitHub Pages is enabled, open:
-
 https://killthelightsandputonashow.github.io/roguelarpz/
 
-On iPhone, open that address in Safari, tap **Share**, choose **Add to Home Screen**, and launch it once while online. The service worker will cache the game for offline play.
+On iPhone, open that address in Safari, tap **Share**, choose **Add to Home Screen**, and launch it once while online. The service worker caches the complete game for offline play.
+
+## Current build
+
+- Tactical encounters replace bump combat.
+- Enemies telegraph their next actions.
+- Combat actions include **Crack**, **Listen**, **Guard**, **Shift**, **Patch**, and **Bomb**.
+- **Remember** requires understanding an enemy's contradiction as well as generating enough heapheart Hum.
+- Restored purposes join the Purpose Choir and alter the run.
+- Thirty chapter pages form the main novella.
+- Twenty recoverable records deepen the history and unlock possibilities.
+- Chapters and records remain readable from the archive.
 
 ## Repository layout
 
@@ -20,7 +29,3 @@ On iPhone, open that address in Safari, tap **Share**, choose **Add to Home Scre
 - `browser-test.html` — JavaScript, storage, and unpacking test
 
 The archive is split only to accommodate the connected GitHub uploader. The player never has to handle the pieces.
-
-## Publishing
-
-This repository is currently private. For free GitHub Pages hosting, change its visibility to **Public**, then go to **Settings → Pages**, choose **Deploy from a branch**, select `main` and `/ (root)`, and save.
