@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#17131f">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icon.svg">
+<title>HEAPHEART: FIRST INTENTION</title>
+<style>
+html,body{margin:0;min-height:100%;background:#110f18;color:#f4ecff;font-family:system-ui,sans-serif}
+body{display:grid;place-items:center;padding:24px;box-sizing:border-box}
+main{max-width:36rem;background:#241e31;border:1px solid #4b405e;border-radius:18px;padding:20px}
+h1{font-size:1.25rem}.bad{color:#ff6f91}
+</style>
+</head>
+<body><main><h1>HEAPHEART IS REMEMBERING ITSELF…</h1><p id="status">Reassembling the Heartworks.</p></main>
+<script>
+(async()=>{
+ try{
+  const paths=Array.from({length:7},(_,i)=>`./game/${i}.txt`);
+  const parts=await Promise.all(paths.map(async p=>{const r=await fetch(p);if(!r.ok)throw new Error(`archive piece missing: ${p}`);return r.text()}));
+  const b64=parts.join('').replace(/\s/g,'');
+  const bytes=Uint8Array.from(atob(b64),c=>c.charCodeAt(0));
+  if(!('DecompressionStream' in window))throw new Error('Safari needs an update to unpack the game');
+  const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+  const html=await new Response(stream).text();
+  document.open();document.write(html);document.close();
+ }catch(e){
+  document.getElementById('status').innerHTML='<span class="bad">Could not unpack the game:</span> '+e.message+'<br><br>Open this page in current Safari rather than an in-app preview.';
+ }
+})();
+</script></body></html>
